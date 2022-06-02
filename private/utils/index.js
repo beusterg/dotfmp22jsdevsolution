@@ -3,7 +3,7 @@ const fs = require('fs');
 var dialog = require('dialog-node');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
-const baseUrl = "https://master.familienservice.de/fmi/data/vLatest/databases/dateiablage/";
+const baseUrl = "https://pme-fmubuntu02.familienservice.de/fmi/data/vLatest/databases/widget/";
 const sessionUrl = baseUrl + "sessions";
 const credentials = "Basic dXBsb2FkOnVwbG9hZA==";
 
@@ -36,7 +36,7 @@ function askConfirmUpload(id, pathToFile, widgetName) {
         if (code == 0 && retVal == id) makeUploadRequest(pathToFile, id);
     }
 
-    dialog.entry('Bist Du Dir sicher, dass Du eine neue Version des folgenden Widgets in die Master hochladen willst: \n\n' + widgetName + ' (Record ID: ' + id + ' bitte überprüfen!) \n\nGib zur Bestätigung die Record ID für dieses Widget ein und drück OK!', 'Upload', 0, callback);
+    dialog.entry('Are you sure you wanna upload code for: \n\n' + widgetName + ' (Record ID: ' + id + ' double check please!) \n\nTo confirm type in the ID and click OK!', 'Upload', 0, callback);
 }
 
 
