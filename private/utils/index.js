@@ -2,13 +2,12 @@ const path = require("path");
 const fs = require('fs');
 var dialog = require('dialog-node');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const packageJson = require("./package.json");
 
-const baseUrl = "https://pme-fmubuntu02.familienservice.de/fmi/data/vLatest/databases/widget/";
-const sessionUrl = baseUrl + "sessions";
-const credentials = "Basic dXBsb2FkOnVwbG9hZA==";
+const sessionUrl = packageJson.config.widgetFileUrl + "sessions";
+const credentials = "Basic " + packageJson.config.widgetFileCredentials; //insert base64 encoded username:password 
 
-const uploadUrl = baseUrl + "layouts/upload/records/";
-
+const uploadUrl = packageJson.config.widgetFileUrl + "layouts/upload/records/";
 
 var codeAsJson;
 var filePath;

@@ -1,8 +1,12 @@
 {
   "name": "utils",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "handles the upload to Claris server",
+  "main": "index.js",  
+  "config": {
+    "widgetFileUrl": "https://YOURSERVERURL/fmi/data/vLatest/databases/widget/",
+    "widgetFileCredentials": "dXBsb2FkOnVwbG9hZA=="
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
